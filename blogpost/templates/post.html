@@ -18,8 +18,12 @@
 					<h5 class="flex-items">{{post.date}}</h5>
 				</div>
 				<div class="box"></div>
-					<img src="{{post.asset.image.url}}" class="img-responsive">	
-					<p class="lead">{{post.content.text}}</p>
+				<div class="text-center">
+					<img src="{{post.asset.image.url}}" class="rounded mx-auto d-block">	
+				</div>
+					<div class="text-justify markdown-style">
+    				{{ post.content.formatted_markdown|safe }}
+    				</div>
 			</div>
 		<div class="col-md-2"></div>
 		</div> 

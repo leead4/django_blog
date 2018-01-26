@@ -264,5 +264,19 @@ animation: AnimationName 30s ease infinite;
   }
 }
 
+.markdown-style {
+  background-color: #FED3D0;
+  font-size: 1.3em;
+  padding-top: 5%;
 
+}
 
+.markdown-style h1 {
+  text-align: center;
+  color: blue;
+
+}
+
+.post-image-animate {
+  color: red;
+}

@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django import forms
 from django.db.models import Q
 from blogpost.models.models import *
+from markdownx.utils import markdownify
 
 
 
@@ -16,9 +17,9 @@ def index(request):
 
 
 def archive(request):
-	template_name = 'blogs.html' 
-	blogs = Post.objects.order_by('date')
-	return render(request, template_name, {'blogs': blogs})
+    template_name = 'blogs.html' 
+    blogs = Post.objects.order_by('date')
+    return render(request, template_name, {'blogs': blogs})
 
 
 def search_keywords(request):
@@ -58,6 +59,11 @@ def projects(request):
 def get_this_post(request, blog_id):
     template_name = 'post.html'
     post = Post.objects.get(pk= blog_id)
+    print("im the content", post.content)
+    print("this is what I am", type(post.content))
+    # for post in post:
+    # post.text = markdownify(post.content.text)
+    print("this is post.text", type(post.content.text))
     return render(request, template_name, {'post': post})
 
 
